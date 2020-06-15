@@ -5,6 +5,7 @@ module.exports = {
   moduleNameMapper: {
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
   },
+  setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
   collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!<rootDir>/node_modules/'],
   coverageThreshold: {
     global: {
