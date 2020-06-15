@@ -14,7 +14,7 @@ Project template for a React library
 
 ## Getting started
 
-- Clone the project
+- Clone the project or click "Use this template" button on GitHub
 - Update the `package.json` with your project details
 - Build the project: `yarn build`
 - Lint the project: `yarn lint`
