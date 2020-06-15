@@ -20,7 +20,10 @@ export default [
         extract: path.resolve(`dist/${pkg.name}.css`),
       }),
       copy({
-        targets: [{ src: 'package.json', dest: 'dist' }],
+        targets: [
+          { src: 'package.json', dest: 'dist' },
+          { src: 'README.md', dest: 'dist' },
+        ],
       }),
       terser(),
     ],
