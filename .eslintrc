@@ -1,9 +1,11 @@
 {
   "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
   "extends": [
+    "plugin:react/recommended",
     "plugin:prettier/recommended",
     "prettier/react",
-    "plugin:@typescript-eslint/eslint-recommended"
+    "plugin:@typescript-eslint/recommended"
   ],
   "env": {
     "node": true
@@ -21,11 +23,13 @@
     }
   },
   "rules": {
-    "space-before-function-paren": 0,
+    "@typescript-eslint/no-explicit-any": "off",
+    "arrow-parens": ["error", "always"],
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/ban-types": "off",
     "react/prop-types": 0,
     "react/jsx-handler-names": 0,
     "react/jsx-fragments": 0,
-    "react/no-unused-prop-types": 0,
-    "import/export": 0
+    "react/no-unused-prop-types": 0
   }
 }
