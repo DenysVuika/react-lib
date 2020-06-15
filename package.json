@@ -50,6 +50,7 @@
     "rollup": "^2.16.1",
     "rollup-plugin-copy": "^3.3.0",
     "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-generate-package-json": "^3.2.0",
     "rollup-plugin-postcss": "^3.1.2",
     "rollup-plugin-terser": "^6.1.0",
     "rollup-plugin-typescript2": "^0.27.1",

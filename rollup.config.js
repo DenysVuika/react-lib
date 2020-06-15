@@ -3,8 +3,17 @@ import { terser } from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript2';
 import postcss from 'rollup-plugin-postcss';
 import del from 'rollup-plugin-delete';
+import generatePackageJson from 'rollup-plugin-generate-package-json';
 import pkg from './package.json';
 import * as path from 'path';
+
+const libDependencies = ['react', 'react-dom', 'typescript'];
+
+const peerDependencies = Object.fromEntries(
+  Object.keys(pkg.devDependencies)
+    .filter((key) => libDependencies.includes(key))
+    .map((key) => [key, pkg.devDependencies[key]])
+);
 
 export default [
   {
@@ -22,10 +31,18 @@ export default [
         extract: path.resolve(`dist/${pkg.name}.css`),
       }),
       copy({
-        targets: [
-          { src: 'package.json', dest: 'dist' },
-          { src: 'README.md', dest: 'dist' },
-        ],
+        targets: [{ src: 'README.md', dest: 'dist' }],
+      }),
+      generatePackageJson({
+        baseContents: (pkg) => ({
+          ...pkg,
+          name: pkg.name,
+          scripts: {},
+          dependencies: {},
+          devDependencies: {},
+          peerDependencies,
+          private: true,
+        }),
       }),
       terser(),
     ],
