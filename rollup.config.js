@@ -7,13 +7,7 @@ import generatePackageJson from 'rollup-plugin-generate-package-json';
 import pkg from './package.json';
 import * as path from 'path';
 
-const libDependencies = ['react', 'react-dom', 'typescript'];
-
-const peerDependencies = Object.fromEntries(
-  Object.keys(pkg.devDependencies)
-    .filter((key) => libDependencies.includes(key))
-    .map((key) => [key, pkg.devDependencies[key]])
-);
+const peerDependencies = pkg.config.lib.peerDependencies;
 
 export default [
   {
@@ -42,6 +36,7 @@ export default [
           devDependencies: {},
           peerDependencies,
           private: true,
+          config: {},
         }),
       }),
       terser(),
