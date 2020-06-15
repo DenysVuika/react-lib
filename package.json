@@ -10,7 +10,8 @@
     "build": "rollup -c",
     "lint": "eslint './{src,app}/**/*.{ts,tsx}'",
     "test": "jest --coverage",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "size": "size-limit"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
   },
   "homepage": "https://github.com/DenysVuika/react-lib#readme",
   "devDependencies": {
+    "@size-limit/preset-small-lib": "^4.5.0",
     "@testing-library/jest-dom": "^5.10.1",
     "@testing-library/react": "^10.2.1",
     "@types/jest": "^26.0.0",
@@ -54,6 +56,7 @@
     "rollup-plugin-postcss": "^3.1.2",
     "rollup-plugin-terser": "^6.1.0",
     "rollup-plugin-typescript2": "^0.27.1",
+    "size-limit": "^4.5.0",
     "ts-jest": "^26.1.0",
     "typescript": "^3.9.5"
   },
@@ -65,5 +68,22 @@
         "typescript": "^3.9.5"
       }
     }
-  }
+  },
+  "size-limit": [
+    {
+      "path": "dist/react-lib.cjs.js",
+      "limit": "1 KB",
+      "webpack": false
+    },
+    {
+      "path": "dist/react-lib.esm.js",
+      "limit": "1 KB",
+      "webpack": false
+    },
+    {
+      "path": "dist/react-lib.umd.js",
+      "limit": "1 KB",
+      "webpack": false
+    }
+  ]
 }
