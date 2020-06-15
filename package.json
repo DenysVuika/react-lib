@@ -1,0 +1,43 @@
+{
+  "name": "react-lib",
+  "version": "1.0.0",
+  "description": "Project template for a React library",
+  "main": "react-lib.cjs.js",
+  "module": "react-lib.esm.js",
+  "browser": "react-lib.umd.js",
+  "private": "true",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DenysVuika/react-lib.git"
+  },
+  "keywords": [
+    "react",
+    "library"
+  ],
+  "author": {
+    "name": "Denys Vuika",
+    "email": "denys.vuika@gmail.com",
+    "url": "https://denys.dev"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DenysVuika/react-lib/issues"
+  },
+  "homepage": "https://github.com/DenysVuika/react-lib#readme",
+  "devDependencies": {
+    "@types/react": "^16.9.36",
+    "@types/react-dom": "^16.9.8",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "rollup": "^2.16.1",
+    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-postcss": "^3.1.2",
+    "rollup-plugin-terser": "^6.1.0",
+    "rollup-plugin-typescript2": "^0.27.1",
+    "typescript": "^3.9.5"
+  }
+}
