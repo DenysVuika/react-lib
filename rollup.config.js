@@ -1,5 +1,5 @@
 import copy from 'rollup-plugin-copy';
-// import { terser } from 'rollup-plugin-terser';
+import { terser } from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript2';
 import postcss from 'rollup-plugin-postcss';
 import pkg from './package.json';
@@ -22,7 +22,7 @@ export default [
       copy({
         targets: [{ src: 'package.json', dest: 'dist' }],
       }),
-      // terser(),
+      terser(),
     ],
     output: [
       {
