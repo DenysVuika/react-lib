@@ -9,6 +9,7 @@ Project template for a React library
 - ESLint (with React and Prettier)
 - Unit tests (Jest and Testing Library)
 - Minified output (Terser)
+- Bundle size validation
 - Flexible builds (Rollup)
 
 ## Getting started
