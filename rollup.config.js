@@ -2,6 +2,7 @@ import copy from 'rollup-plugin-copy';
 import { terser } from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript2';
 import postcss from 'rollup-plugin-postcss';
+import del from 'rollup-plugin-delete';
 import pkg from './package.json';
 import * as path from 'path';
 
@@ -10,6 +11,7 @@ export default [
     input: 'src/index.tsx',
     external: ['react'],
     plugins: [
+      del({ targets: 'dist/*' }),
       typescript({
         typescript: require('typescript'),
       }),
