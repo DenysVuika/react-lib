@@ -1,6 +1,6 @@
 {
   "name": "react-lib",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Project template for a React library",
   "main": "react-lib.cjs.js",
   "module": "react-lib.esm.js",
