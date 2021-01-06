@@ -6,6 +6,7 @@
   "module": "react-lib.esm.js",
   "browser": "react-lib.umd.js",
   "private": "true",
+  "typings": "index.d.ts",
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint './{src,app}/**/*.{ts,tsx}'",
