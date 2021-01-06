@@ -2,9 +2,8 @@
   "name": "react-lib",
   "version": "2.0.0",
   "description": "Project template for a React library",
-  "main": "react-lib.cjs.js",
+  "main": "react-lib.umd.js",
   "module": "react-lib.esm.js",
-  "browser": "react-lib.umd.js",
   "private": "true",
   "typings": "index.d.ts",
   "scripts": {

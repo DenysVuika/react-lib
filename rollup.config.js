@@ -25,7 +25,10 @@ export default [
         extract: resolve(`dist/${pkg.name}.css`),
       }),
       copy({
-        targets: [{ src: 'README.md', dest: 'dist' }],
+        targets: [
+          { src: 'README.md', dest: 'dist' },
+          { src: 'CHANGELOG.md', dest: 'dist' },
+        ],
       }),
       generatePackageJson({
         baseContents: (pkg) => ({
@@ -44,14 +47,14 @@ export default [
     output: [
       {
         name: pkg.name,
-        file: `dist/${pkg.browser}`,
+        file: `dist/${pkg.main}`,
         format: 'umd',
         globals: {
           react: 'react',
         },
+        sourcemap: true,
       },
-      { file: `dist/${pkg.main}`, format: 'cjs' },
-      { file: `dist/${pkg.module}`, format: 'es' },
+      { file: `dist/${pkg.module}`, format: 'es', sourcemap: true },
     ],
   },
 ];
