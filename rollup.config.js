@@ -19,7 +19,6 @@ export default [
         typescript: require('typescript'),
       }),
       postcss({
-        extract: true,
         modules: true,
         plugins: [],
         extract: resolve(`dist/${pkg.name}.css`),
