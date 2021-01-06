@@ -70,22 +70,5 @@
         "typescript": "^4.1.3"
       }
     }
-  },
-  "size-limit": [
-    {
-      "path": "dist/react-lib.cjs.js",
-      "limit": "1 KB",
-      "webpack": false
-    },
-    {
-      "path": "dist/react-lib.esm.js",
-      "limit": "1 KB",
-      "webpack": false
-    },
-    {
-      "path": "dist/react-lib.umd.js",
-      "limit": "1 KB",
-      "webpack": false
-    }
-  ]
+  }
 }

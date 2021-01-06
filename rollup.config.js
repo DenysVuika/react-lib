@@ -37,7 +37,6 @@ export default [
           peerDependencies,
           private: true,
           config: undefined,
-          'size-limit': undefined,
         }),
       }),
       terser(),
