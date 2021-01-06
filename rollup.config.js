@@ -5,7 +5,7 @@ import postcss from 'rollup-plugin-postcss';
 import del from 'rollup-plugin-delete';
 import generatePackageJson from 'rollup-plugin-generate-package-json';
 import pkg from './package.json';
-import * as path from 'path';
+import { resolve } from 'path';
 
 const peerDependencies = pkg.config.lib.peerDependencies;
 
@@ -19,24 +19,26 @@ export default [
         typescript: require('typescript'),
       }),
       postcss({
-        extract: true,
         modules: true,
         plugins: [],
-        extract: path.resolve(`dist/${pkg.name}.css`),
+        extract: resolve(`dist/${pkg.name}.css`),
       }),
       copy({
-        targets: [{ src: 'README.md', dest: 'dist' }],
+        targets: [
+          { src: 'README.md', dest: 'dist' },
+          { src: 'CHANGELOG.md', dest: 'dist' },
+        ],
       }),
       generatePackageJson({
         baseContents: (pkg) => ({
           ...pkg,
           name: pkg.name,
-          scripts: {},
+          scripts: undefined,
           dependencies: {},
           devDependencies: {},
           peerDependencies,
           private: true,
-          config: {},
+          config: undefined,
         }),
       }),
       terser(),
@@ -44,14 +46,14 @@ export default [
     output: [
       {
         name: pkg.name,
-        file: `dist/${pkg.browser}`,
+        file: `dist/${pkg.main}`,
         format: 'umd',
         globals: {
           react: 'react',
         },
+        sourcemap: true,
       },
-      { file: `dist/${pkg.main}`, format: 'cjs' },
-      { file: `dist/${pkg.module}`, format: 'es' },
+      { file: `dist/${pkg.module}`, format: 'es', sourcemap: true },
     ],
   },
 ];
