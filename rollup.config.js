@@ -5,7 +5,7 @@ import postcss from 'rollup-plugin-postcss';
 import del from 'rollup-plugin-delete';
 import generatePackageJson from 'rollup-plugin-generate-package-json';
 import pkg from './package.json';
-import * as path from 'path';
+import { resolve } from 'path';
 
 const peerDependencies = pkg.config.lib.peerDependencies;
 
@@ -22,7 +22,7 @@ export default [
         extract: true,
         modules: true,
         plugins: [],
-        extract: path.resolve(`dist/${pkg.name}.css`),
+        extract: resolve(`dist/${pkg.name}.css`),
       }),
       copy({
         targets: [{ src: 'README.md', dest: 'dist' }],
