@@ -1,11 +1,8 @@
 {
   "name": "react-lib",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Project template for a React library",
-  "main": "react-lib.umd.js",
-  "module": "react-lib.esm.js",
   "private": "true",
-  "typings": "index.d.ts",
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint './{src,app}/**/*.{ts,tsx}'",
