@@ -30,7 +30,7 @@
   "homepage": "https://github.com/DenysVuika/react-lib#readme",
   "devDependencies": {
     "@size-limit/preset-small-lib": "^4.5.0",
-    "@testing-library/jest-dom": "^5.10.1",
+    "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
     "@types/jest": "^26.0.20",
     "@types/react": "^17.0.0",
