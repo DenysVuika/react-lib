@@ -48,7 +48,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "rollup": "^2.51.2",
-    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-generate-package-json": "^3.2.0",
     "rollup-plugin-postcss": "^4.0.0",
