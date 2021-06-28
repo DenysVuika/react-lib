@@ -44,7 +44,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.0.1",
     "postcss": "^8.3.5",
-    "prettier": "^2.0.5",
+    "prettier": "^2.3.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "rollup": "^2.52.1",
