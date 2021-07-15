@@ -4,7 +4,6 @@
   "extends": [
     "plugin:react/recommended",
     "plugin:prettier/recommended",
-    "prettier/react",
     "plugin:@typescript-eslint/recommended"
   ],
   "env": {
