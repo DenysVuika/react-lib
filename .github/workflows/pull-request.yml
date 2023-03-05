@@ -1,0 +1,30 @@
+name: Pull Request
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+      - develop
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+          cache: 'npm'
+      - name: Test
+        run: |
+          npm ci
+          npm run lint
+          npm run test
+          npm run build
+          npm run size
+        env:
+          CI: true
